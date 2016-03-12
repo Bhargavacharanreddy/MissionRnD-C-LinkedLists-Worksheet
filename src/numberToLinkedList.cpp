@@ -48,9 +48,7 @@ struct node * numberToLinkedList(int N)
 
 		n = N % 10;
 		N = N / 10;
-
-		p->num = n;
-		//p->next=NULL;
+        p->num = n;
 		tmp = (struct node *)malloc(sizeof(struct node));
 		p->next = tmp;
 		q = p;
