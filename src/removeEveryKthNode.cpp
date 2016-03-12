@@ -13,11 +13,33 @@ NOTES:
 
 #include <stdio.h>
 
-struct node {
+struct node 
+{
 	int num;
 	struct node *next;
 };
 
-struct node * removeEveryKthNode(struct node *head, int K) {
+struct node * removeEveryKthNode(struct node *head, int K) 
+{
+	if (head==NULL ||K<=1)
 	return NULL;
+	int index = 1;
+	struct node *temp,*p=NULL;
+	temp = head;
+	while (temp != NULL)
+	{
+		if (index%K == 0)
+		{
+			p->next = temp->next;
+			temp = temp->next;
+		}
+		else
+		{
+			p = temp;
+			temp = temp->next;
+		}
+		index++;
+	}
+	return head;
+
 }
